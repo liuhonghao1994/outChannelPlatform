@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="echannel:war2">
+    <output-path>$PROJECT_DIR$/out/artifacts/echannel_war2</output-path>
+    <root id="archive" name="echannel_war.war">
+      <element id="artifact" artifact-name="echannel:war exploded" />
+    </root>
+  </artifact>
+</component>
