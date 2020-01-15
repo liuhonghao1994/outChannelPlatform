@@ -15,7 +15,7 @@ public interface QueryPhoneBySimDao {
                 "FROM so.res_sim_card_origin s   \n" +
                 "WHERE substr(S.ICC_ID, 1, 19) = SUBSTR(#{iccid_sn}, 1, 19)\n" +
                 "or S.ICC_ID =#{iccid_sn}\n" +
-                "or substr(S.SN, 1, 18) = SUBSTR(#{iccid_sn}, 1, 18)")
+                "or  S.SN like SUBSTR(#{iccid_sn}, 1, 18) || '%'")
         UnuseBeanOfQueryPhone getUnUseChartOfQueryPhone(@Param("iccid_sn") String iccid_sn);
 
 
@@ -23,9 +23,9 @@ public interface QueryPhoneBySimDao {
         @Select("SELECT u.bill_id,s.icc_id,decode(u.state ,1,'在用',4,'预开户',5,'已销户',6,'已销户','作废') status\n" +
                 "FROM so.res_sim_card_used s  ,so.ins_user  u\n" +
                 "WHERE s.imsi= u.sub_bill_id(+)\n" +
-                "and(substr(S.ICC_ID, 1, 19)= SUBSTR(#{iccid_sn}, 1, 19)\n" +
+                "and( S.ICC_ID like SUBSTR(#{iccid_sn}, 1, 19) || '%'\n" +
                 "or S.ICC_ID =#{iccid_sn}\n" +
-                "or substr(S.SN, 1, 18) = SUBSTR(#{iccid_sn}, 1, 18))")
+                "or S.SN like  SUBSTR(#{iccid_sn}, 1, 18) || '%')")
         UseBeanOfQueryPhone getUseChartOfQueryPhone(@Param("iccid_sn") String iccid_sn);
 
 }

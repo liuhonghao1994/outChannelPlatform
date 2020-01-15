@@ -36,7 +36,7 @@ public class AuditStatusQueryService  extends  IBaseBusiService{
         }
 
 
-        try {
+       /* try {
             auditMes = auditStatusQueryDao.getAuditMes(jsonObject.getString(PARAM_PHONE));
             if (auditMes.getBill_id()==null || "".equals(auditMes.getBill_id())){
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,AppConstant.REPONSE_MSG.SYS_REQUEST_FAIL_MSG,"未查找到相关结果");
@@ -50,8 +50,9 @@ public class AuditStatusQueryService  extends  IBaseBusiService{
                     e.getMessage());
             return  reponseMessage;
         }
-
-
+*/
+        auditMes.setBill_id(jsonObject.getString(PARAM_PHONE));
+        reponseMessage.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,auditMes);
         return reponseMessage;
     }
 

@@ -16,7 +16,9 @@ public class RevieWaybillValidationService extends IBaseBusiService {
     private static final String PARAM_PHONE= "phone";
     @Override
     public ReponseMessage execute(String reqInfo, String source) {
-
+        ReponseMessage responseMessage=new ReponseMessage();
+        JSONObject jsonObject = JSON.parseObject(reqInfo);
+/*
         ReponseMessage responseMessage=new ReponseMessage();
         JSONObject jsonObject = JSON.parseObject(reqInfo);
         try {
@@ -32,8 +34,8 @@ public class RevieWaybillValidationService extends IBaseBusiService {
             responseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,AppConstant.REPONSE_MSG.SYS_REQUEST_FAIL_MSG,"此号码不能提交");
         }else {
             responseMessage.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,"此号码可以提交");
-        }
-
+        }*/
+        responseMessage.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,"此号码可以提交");
         return responseMessage;
     }
 

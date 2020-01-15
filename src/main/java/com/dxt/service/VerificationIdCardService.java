@@ -37,18 +37,19 @@ public class VerificationIdCardService extends IBaseBusiService{
                     e.getMessage());
             return  reponseMessage;
         }
-
-
         try {
-            Map<String,String> map=new HashMap<>();
+           /* Map<String,String> map=new HashMap<>();
             map.put("in_custcertcode",jsonObject.getString(PARAM_IDCARDNUMBER));
             map.put("in_openid",jsonObject.getString(PARAM_IDCARDNUMBER));
 
             //先调用存贮过程，成功直接返回结果，然后调用国政通，失败直接返回用户失败结果
-            verificationIdCardDao.verificationIdCard(map);
+            verificationIdCardDao.verificationIdCardOld(map);
             JSONObject retObject = new JSONObject();
             retObject.put("VO_RETURN_CODE",map.get("vo_return_cod"));
-            retObject.put("VO_RETURN_MESSAGE",map.get("vo_return_message"));
+            retObject.put("VO_RETURN_MESSAGE",map.get("vo_return_message"));*/
+            JSONObject retObject = new JSONObject();
+            retObject.put("VO_RETURN_CODE","0000");
+            retObject.put("VO_RETURN_MESSAGE","成功");
             reponseMessage.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,retObject);
             //
         } catch (Exception e) {
@@ -63,12 +64,10 @@ public class VerificationIdCardService extends IBaseBusiService{
         if ("".equals(jsonObject.getString(PARAM_IDCARDNUMBER)) || jsonObject.getString(PARAM_IDCARDNUMBER).length()!=18) {
             throw new MyBusiException("身份证号码有误");
         }
-
         boolean validDate = CommonUtils.isValidDate(jsonObject.getString(PARAM_IDCARDVALIDITY));
         if (validDate==false){
             throw  new  MyBusiException("日期格式不符合规范！");
         }
-
         //比较证件有效期
         String format = "yyyyMMdd";
         SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -77,8 +76,6 @@ public class VerificationIdCardService extends IBaseBusiService{
         {
             throw  new MyBusiException("证件已过期");
         }
-
-
         if (IdCardVerification.IDCardValidate(jsonObject.getString(PARAM_IDCARDNUMBER))==false){
             throw  new  MyBusiException("证件号码有误！");
         }

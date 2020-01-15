@@ -3,15 +3,12 @@ import com.dxt.common.MyBase64;
 import com.dxt.common.MyMD5;
 
 import java.util.LinkedHashMap;
-
-
 public class JustTest {
     public static void main(String[] args) {
         JSONObject reqInfo = new JSONObject(new LinkedHashMap<String, Object>());
-
-        reqInfo.put("phone","17091949739");
-        reqInfo.put("offerId","111099900519");
-        reqInfo.put("operType","1");
+        reqInfo.put("reqSerial","c2019123198276347");
+        reqInfo.put("destCode","15811439827");
+        reqInfo.put("feeAmount","100");
       /*  reqInfo.put("platform","9");
         reqInfo.put("cardType","1");
         reqInfo.put("cardNumber","220523198301111425");
@@ -59,9 +56,8 @@ public class JustTest {
         reqInfo.put("phone","17098852095");
         reqInfo.put("oppNumber","17090384557");*/
         JSONObject object = new JSONObject();
-
         object.put("appType", "web");
-        object.put("busiCode", "10040");
+        object.put("busiCode", "10037");
         object.put("timestamp", "1548312561300");
         object.put("uuId", "999");
         object.put("version", "1");
@@ -70,8 +66,6 @@ public class JustTest {
         object.put("secretKey","QXNpYWluZm9vcGVuaW50ZXJmYWNlMTAwMjZkaXhpbnRvbmc=");
         object.put("channelId","dajiayewuzhushou");
         object.put("operatorId","beijing");
-
-
         Long signTimeStamp = Long.parseLong(object.getString("timestamp")) + Long.parseLong(object.getString("clientCode"));
         String signStr = object.getString("appType") + object.getString("busiCode") + reqInfo.toString() +
                 object.getString("uuId") + signTimeStamp.toString()+object.getString("secretKey");
@@ -83,11 +77,6 @@ public class JustTest {
         System.out.println();
         byte[] byteArray = MyBase64.decryptBASE64(data);
         System.out.println(new String(byteArray));
-
-
-
-
-
 
     }
 

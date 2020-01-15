@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface PhotoSynchronizationDao {
 
 
-    @Select("select user_id from so.ins_user  where bill_id = #{phone}")
+    @Select("select user_id from so.ins_user where bill_id = #{phone}")
     String getUUid(@Param("phone") String phone);
 
 

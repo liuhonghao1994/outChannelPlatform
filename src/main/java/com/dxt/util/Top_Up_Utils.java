@@ -1,5 +1,6 @@
 package com.dxt.util;
 
+import com.dxt.model.TopResult;
 import com.dxt.model.TopUpEntity;
 import com.dxt.model.UserEntity;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
@@ -33,8 +34,12 @@ import java.util.Date;
  */
 
 public class Top_Up_Utils {
-        String url = "https://124.202.131.74:8899/plat/HttpAPIService";
-        public String getHttpsResponse(TopUpEntity topUpEntity) throws ParseException, IOException{
+//        String url = "http://124.202.131.84:9988/plat/HttpAPIService";
+        String url = "http://10.10.11.52:9988/plat/HttpAPIService";
+    private TopResult topResult;
+    private static String tancs;
+
+    public TopResult getHttpsResponse(TopUpEntity topUpEntity) throws ParseException, IOException{
             String appKey = "DXTHNFGS001";
             String secretKey = "DXTHNFGS001";
             DateFormat df = new SimpleDateFormat("yyyyMMdd");
@@ -54,7 +59,6 @@ public class Top_Up_Utils {
                 request.getHead().setReqTime(new Date());
                 request.getHead().setVersion("V1.0");
                 request.getHead().setTransactionId(transactionId);
-
                 //请求体内容设置
                 TopUpRequestBody body = new TopUpRequestBody();
                 TopUpReq topUpReq = new TopUpReq();
@@ -76,19 +80,19 @@ public class Top_Up_Utils {
                         .println("executing request " + httppost.getRequestLine());
                 CloseableHttpResponse response = httpclient.execute(httppost);
                 try {
-                    System.out.println("----------------------------------------");
-                    System.out.println(response.getStatusLine());
+                   /* System.out.println("----------------------------------------");
+                    System.out.println(response.getStatusLine());*/
                     HttpEntity resEntity = response.getEntity();
-                    if (resEntity != null) {
+                   /* if (resEntity != null) {
                         System.out.println("Response content length: "
                                 + resEntity.getContentLength());
-                    }
+                    }*/
                     byte[] buf = new byte[1024];
                     int len = resEntity.getContent().read(buf);
                     resStr = new String(buf, 0, len);
                     EntityUtils.consume(resEntity);
-                    System.out.println("resStr==="+resStr);
-                    result = xml2Object(resStr);
+                   /* System.out.println("resStr==="+resStr);*/
+                    topResult = xml2Object(resStr);
                 } finally {
                     response.close();
                 }
@@ -97,7 +101,7 @@ public class Top_Up_Utils {
             }finally{
                 httpclient.close();
             }
-            return result;
+            return topResult;
         }
 
         private CloseableHttpClient createHttpClient() {
@@ -132,34 +136,37 @@ public class Top_Up_Utils {
         }
 
         @SuppressWarnings({ "unused", "unchecked" })
-        private static String xml2Object(String xml) throws DocumentException {
+        private static TopResult xml2Object(String xml) throws DocumentException {
+            TopResult topResult=new TopResult();
             Document doc = null;
             String respCode = "";
+            String respDesc="";
 //	       try {
             int index = xml.indexOf("<respCode>");
+            System.out.println(index);
             respCode = xml.substring(index+10,index+14);
+            int indexDes = xml.indexOf("<respDesc>");
+            respDesc = xml.substring(indexDes + 10, indexDes + 31);
 
+
+            int indexTrans = xml.indexOf("<transactionId>");
+            tancs = xml.substring(indexTrans + 15, indexTrans + 44);
+
+
+            String trim = respDesc.trim();
+            System.out.println("resDesc==="+respDesc);
             System.out.println("respCode==="+respCode);
-            // 下面的是通过解析xml字符串的
-//	            doc = DocumentHelper.parseText(xml); // 将字符串转为XML
-//	            Element rootElt = doc.getRootElement(); // 获取根节点
-//	            System.out.println("根节点：" + rootElt.getName()); // 拿到根节点的名称
-//	            Element headElt = rootElt.element("Head");
-//	            Element responseElt = headElt.element("Response");
-//	            respCode = responseElt.elementTextTrim("respCode").toString();
-//	            Element bodyElt = rootElt.element("Body");
-//	            Element idAuthRespElt = bodyElt.element("IdAuthResp");
-//	            String name = idAuthRespElt.elementTextTrim("name").toString();
-//	            String idCode = idAuthRespElt.elementTextTrim("idCode").toString();
-//	            String mobile = idAuthRespElt.elementTextTrim("mobile").toString();
-//	            String birthday = idAuthRespElt.elementTextTrim("birthday").toString();
-//	        } catch (DocumentException e) {
-//	            e.printStackTrace();
-//
-//	        } catch (Exception e) {
-//	            e.printStackTrace();
-//
-//	        }
-            return respCode;
+            topResult.setCode(respCode);
+            if (!topResult.getCode().equals("0000")){
+                if (trim.indexOf("<")!=-1){
+                    topResult.setResult(trim.substring(0, trim.indexOf("<")));
+                }else {
+                    topResult.setResult(trim);
+                }
+
+            }
+            topResult.setTransactionId(tancs);
+            System.out.println("respTrans==="+tancs);
+            return topResult;
         }
 }

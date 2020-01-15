@@ -6,11 +6,11 @@
 
     <groupId>com.dxt.echannel</groupId>
     <artifactId>echannel</artifactId>
-    <version>1.0</version>
+    <!--<version>1.0</version>-->
 
         <packaging>jar</packaging>
 
-    <name>echannel</name>
+    <name>appserver</name>
     <description>迪加掌厅后台</description>
 
     <parent>
@@ -197,6 +197,7 @@
 
 
     <build>
+        <!--配置构建过程中的插件-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
