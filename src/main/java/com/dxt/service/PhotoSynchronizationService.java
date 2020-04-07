@@ -164,14 +164,14 @@ public class PhotoSynchronizationService extends IBaseBusiService {
             else if (!CommonUtils.inValid(jsonObject.getString(PARAM_PHONE))){
                 throw new MyBusiException("号码格式不正确");
             }
-            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_IDCARDFRONT))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_IDCARDFRONT))>8*1024*1024){
-                throw new MyBusiException("图片大小应保持10KB-8M之间");
+            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_IDCARDFRONT))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_IDCARDFRONT))>5*1024*1024){
+                throw new MyBusiException("图片大小应保持10KB-5M之间");
             }
-            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_REVERSEIDCARD_ICCID))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_REVERSEIDCARD_ICCID))>8*1024*1024){
-                throw new MyBusiException("图片大小应保持10KB-8M之间");
+            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_REVERSEIDCARD_ICCID))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_REVERSEIDCARD_ICCID))>5*1024*1024){
+                throw new MyBusiException("图片大小应保持10KB-5M之间");
             }
-            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_BAREHEADPHOTO))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_BAREHEADPHOTO))>8*1024*1024){
-                throw new MyBusiException("图片大小应保持10KB-8M之间");
+            else if (CommonUtils.imageSize(jsonObject.getString(PARAM_BAREHEADPHOTO))<10*1024 || CommonUtils.imageSize(jsonObject.getString(PARAM_BAREHEADPHOTO))>5*1024*1024){
+                throw new MyBusiException("图片大小应保持10KB-5M之间");
             }else if (jsonObject.getString(PARAM_CARDNUMBER).length()!=18) {
                 throw new MyBusiException("身份证号码有误");
             } else if (validDatetakeeffect==false){

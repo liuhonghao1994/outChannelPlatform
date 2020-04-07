@@ -31,6 +31,7 @@ public interface UserInfoDao {
                 "and u.cust_id=c.cust_id\n" +
                 "and u.bill_id=#{phone}\n" +
                 "and offer.expire_date>sysdate\n" +
+                "and offer.effective_date<=sysdate\n"+
                 "and offer.user_id=u.user_id\n" +
                 "and offer.offer_type='OFFER_PLAN_GSM'")
         UserInfoModle getUserInfoMes(@Param("phone") String phone);
