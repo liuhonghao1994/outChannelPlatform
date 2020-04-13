@@ -89,29 +89,4 @@ public class IDCardOCR
 
     }
 
-    public static void main(String [] args) {
-        try{
-
-            Credential cred = new Credential("AKIDd17xDD1OaMvEI6BwxiEYdVCftsf145i4", "5xZZOxGJ6dyPaU9Xh9PPCjzy5xYswkJ1");
-
-            HttpProfile httpProfile = new HttpProfile();
-            httpProfile.setEndpoint("ocr.tencentcloudapi.com");
-
-            ClientProfile clientProfile = new ClientProfile();
-            clientProfile.setHttpProfile(httpProfile);
-
-            OcrClient client = new OcrClient(cred, "ap-beijing", clientProfile);
-
-            String params = "{\"ImageBase64\":\"1111111\",\"ImageUrl\":\"1122\",\"CardSide\":\"22222\",\"Config\":\"12222212\"}";
-            IDCardOCRRequest req = IDCardOCRRequest.fromJsonString(params, IDCardOCRRequest.class);
-
-            IDCardOCRResponse resp = client.IDCardOCR(req);
-
-            System.out.println(IDCardOCRRequest.toJsonString(resp));
-        } catch (TencentCloudSDKException e) {
-            System.out.println(e.toString());
-        }
-
-    }
-
 }

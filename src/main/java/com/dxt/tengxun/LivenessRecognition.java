@@ -84,22 +84,4 @@ public class LivenessRecognition
         return reponseMessage;
     }
 
-    public static void main(String [] args) {
-        try{
-            Credential cred = new Credential("AKIDd17xDD1OaMvEI6BwxiEYdVCftsf145i4", "5xZZOxGJ6dyPaU9Xh9PPCjzy5xYswkJ1");
-            HttpProfile httpProfile = new HttpProfile();
-            httpProfile.setEndpoint("faceid.tencentcloudapi.com");
-            ClientProfile clientProfile = new ClientProfile();
-            clientProfile.setHttpProfile(httpProfile);
-            FaceidClient client = new FaceidClient(cred, "ap-beijing", clientProfile);
-            String params = "{\"IdCard\":\"410522198806124714\",\"Name\":\"李艳超\",\"VideoBase64\":\"12341234123\",\"LivenessType\":\"SILENT\"}";
-            LivenessRecognitionRequest req = LivenessRecognitionRequest.fromJsonString(params, LivenessRecognitionRequest.class);
-            LivenessRecognitionResponse resp = client.LivenessRecognition(req);
-            System.out.println(LivenessRecognitionRequest.toJsonString(resp));
-        } catch (TencentCloudSDKException e) {
-            System.out.println(e.toString());
-        }
-
-    }
-
 }

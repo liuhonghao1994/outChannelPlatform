@@ -71,10 +71,5 @@ public class IdCardVerification
         return reponseMessage;
 
     }
-    public static void main(String [] args) {
-        IdCardVerification idCardVerification = new IdCardVerification();
-        ReponseMessage reponseMessage = idCardVerification.checkIdCard("李艳超1","4105221988061241714");
-        System.out.println(reponseMessage);
-    }
 
 }
