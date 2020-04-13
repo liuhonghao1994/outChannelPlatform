@@ -2,10 +2,13 @@ package com.dxt.message;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dxt.common.MyObjectUtil;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * 错误信息处理
  */
+@Repository
 public class ReponseMessage {
 
     private String code;
