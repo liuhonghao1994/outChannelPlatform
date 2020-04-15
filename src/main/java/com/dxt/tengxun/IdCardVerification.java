@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dxt.common.AppConstant;
 import com.dxt.dao.CustCertInfoDao;
+import com.dxt.dao.IdCardCheckLogDao;
 import com.dxt.message.ReponseMessage;
 import com.dxt.model.CustCertInfo;
+import com.dxt.model.IdCardCheckLogBean;
 import com.dxt.service.CacheManager;
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.profile.ClientProfile;
@@ -28,6 +30,10 @@ public class IdCardVerification
     CustCertInfoDao custCertInfoDao;
     @Autowired
     CustCertInfo custCertInfo;
+    @Autowired
+    IdCardCheckLogBean idCardCheckLogBean;
+    @Autowired
+    IdCardCheckLogDao idCardCheckLogDao;
     public ReponseMessage checkIdCard(String name, String idCard){
         ReponseMessage reponseMessage = new ReponseMessage();
         String result = "";
@@ -46,6 +52,9 @@ public class IdCardVerification
         } catch (TencentCloudSDKException e) {
             reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,AppConstant.REPONSE_MSG.SYS_VERIFIY_ERROR_MSG,
                     "调用腾讯云身份信息认证接口报错:"+e.getMessage());
+            idCardCheckLogBean.setResultCode("9999");
+            idCardCheckLogBean.setResultMsg("调用腾讯云接口报错:"+e.getMessage());
+            idCardCheckLogBean.setResultRequestId("9999");
             return reponseMessage;
         }
         if(!result.isEmpty()){
@@ -64,12 +73,21 @@ public class IdCardVerification
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                         resultMsg);
             }
+            idCardCheckLogBean.setResultCode(resultCode);
+            idCardCheckLogBean.setResultMsg(resultMsg);
+            idCardCheckLogBean.setResultRequestId(resultRequestId);
         }else{
             reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                     AppConstant.REPONSE_MSG.SYS_VERIFIY_ERROR_MSG,result);
+            idCardCheckLogBean.setResultCode("1000");
+            idCardCheckLogBean.setResultMsg("未获取到腾讯云返回的报文");
+            idCardCheckLogBean.setResultRequestId("0");
         }
+        idCardCheckLogBean.setIdCard(idCard);
+        idCardCheckLogBean.setName(name);
+        idCardCheckLogBean.setPlat("TXY");
+        idCardCheckLogDao.insertIdCardCheckLog(idCardCheckLogBean);
         return reponseMessage;
-
     }
 
 }

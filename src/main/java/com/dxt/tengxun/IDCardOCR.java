@@ -78,7 +78,7 @@ public class IDCardOCR
                     custCertInfo.setValidDate(jsonObject.getString("ValidDate"));
                 }
                 custCertInfo.setId(requestId);
-                retObject.put("custCertInfo",custCertInfo);
+                retObject.put(AppConstant.REQUEST_REPONSE_PARAM.PARAM_OUT_CUSTCERTINFO,custCertInfo);
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,retObject);
             }
         }else{
