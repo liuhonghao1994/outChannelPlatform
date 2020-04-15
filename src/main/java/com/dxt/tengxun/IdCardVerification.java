@@ -45,7 +45,11 @@ public class IdCardVerification
             ClientProfile clientProfile = new ClientProfile();
             clientProfile.setHttpProfile(httpProfile);
             FaceidClient client = new FaceidClient(cred, "ap-beijing", clientProfile);
-            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+"}";
+            JSONObject paramsJson = new JSONObject();
+            paramsJson.put("IdCard",idCard);
+            paramsJson.put("Name",name);
+            String params = paramsJson.toJSONString();
+//            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+"}";
             IdCardVerificationRequest req = IdCardVerificationRequest.fromJsonString(params, IdCardVerificationRequest.class);
             IdCardVerificationResponse resp = client.IdCardVerification(req);
             result = IdCardVerificationRequest.toJsonString(resp);

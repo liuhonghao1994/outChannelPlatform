@@ -41,7 +41,11 @@ public class IDCardOCR
             ClientProfile clientProfile = new ClientProfile();
             clientProfile.setHttpProfile(httpProfile);
             OcrClient client = new OcrClient(cred, "ap-beijing", clientProfile);
-            String params = "{\"ImageBase64\":"+imageBase64+",\"CardSide\":"+cardSide+"}";
+            JSONObject paramsJson = new JSONObject();
+            paramsJson.put("ImageBase64",imageBase64);
+            paramsJson.put("CardSide",cardSide);
+            String params = paramsJson.toJSONString();
+//            String params = "{\"ImageBase64\":\""+imageBase64+"\",\"CardSide\":\""+cardSide+"\"}";
             IDCardOCRRequest req = IDCardOCRRequest.fromJsonString(params, IDCardOCRRequest.class);
             IDCardOCRResponse resp = client.IDCardOCR(req);
             result = IDCardOCRRequest.toJsonString(resp);

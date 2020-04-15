@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface TxyOcrAnalyseCardLogDao {
 
     @Insert("insert into dxt_txy_ocr_analyse_card_log(txy_order_id,responsestr,plat,card_type) " +
-            "select #{txyOrderId},#{responseStr},#{plat},{cardType} from dual a ")
+            "select #{txyOrderId},#{responseStr},#{plat},#{cardType} from dual a ")
     void insertTxyOcrAnalyseCardLog(TxyOcrAnalyseCardLogBean info);
 
 }

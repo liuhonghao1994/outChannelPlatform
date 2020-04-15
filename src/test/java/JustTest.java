@@ -4,10 +4,10 @@ import com.dxt.common.MyMD5;
 
 public class JustTest {
     public static void main(String[] args) {
-        JSONObject reqInfo = getReqInfo10602();
+        JSONObject reqInfo = getReqInfo10601();
         JSONObject object = new JSONObject();
         object.put("appType", "web");
-        object.put("busiCode", "10602");
+        object.put("busiCode", "10601");
         object.put("timestamp", System.currentTimeMillis());
         object.put("uuId", "999");
         object.put("version", "1");
@@ -53,7 +53,7 @@ public class JustTest {
     public static JSONObject getReqInfo10601(){
         JSONObject reqInfo = new JSONObject();
         reqInfo.put("name","李艳超");
-        reqInfo.put("certCode","lov23");
+        reqInfo.put("certCode","410522198806124714");
         return reqInfo;
     }
 

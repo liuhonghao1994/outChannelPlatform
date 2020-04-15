@@ -41,7 +41,13 @@ public class LivenessRecognition
             ClientProfile clientProfile = new ClientProfile();
             clientProfile.setHttpProfile(httpProfile);
             FaceidClient client = new FaceidClient(cred, "ap-beijing", clientProfile);
-            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+",\"VideoBase64\":"+videoBase64+",\"LivenessType\":\"SILENT\"}";
+            JSONObject paramsJson = new JSONObject();
+            paramsJson.put("IdCard",idCard);
+            paramsJson.put("Name",name);
+            paramsJson.put("VideoBase64",videoBase64);
+            paramsJson.put("LivenessType","SILENT");
+            String params = paramsJson.toJSONString();
+//            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+",\"VideoBase64\":"+videoBase64+",\"LivenessType\":\"SILENT\"}";
             LivenessRecognitionRequest req = LivenessRecognitionRequest.fromJsonString(params, LivenessRecognitionRequest.class);
             LivenessRecognitionResponse resp = client.LivenessRecognition(req);
             result = LivenessRecognitionRequest.toJsonString(resp);
@@ -64,7 +70,7 @@ public class LivenessRecognition
                 map.put("resCode",code);
                 map.put("resMsg",message);
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
-                        message);
+                        message,map);
             }else{
                 String resultCode = jsonObject.getString("Result");
                 String description = jsonObject.getString("Description");
@@ -83,7 +89,7 @@ public class LivenessRecognition
                             description,retObject);
                 }else{
                     reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
-                            description);
+                            description,map);
                 }
             }
             txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
