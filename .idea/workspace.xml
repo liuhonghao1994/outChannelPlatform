@@ -6,19 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dxt/dao/IdCardCheckLogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dxt/model/IdCardCheckLogBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dxt/model/LivenessInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/common/AppConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/common/AppConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/dao/TxyOcrAnalyseCardLogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/dao/TxyOcrAnalyseCardLogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/service/IdCardVerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/service/IdCardVerificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/IDCardOCR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/IDCardOCR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/IdCardVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/IdCardVerification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/JustTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JustTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1073,8 +1061,16 @@
       <workItem from="1586505069385" duration="379000" />
       <workItem from="1586743458403" duration="5175000" />
       <workItem from="1586831750590" duration="17272000" />
-      <workItem from="1586913471161" duration="2734000" />
+      <workItem from="1586913471161" duration="2969000" />
     </task>
+    <task id="LOCAL-00001" summary="合并代码">
+      <created>1587004029047</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587004029047</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1088,6 +1084,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="合并代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="合并代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
