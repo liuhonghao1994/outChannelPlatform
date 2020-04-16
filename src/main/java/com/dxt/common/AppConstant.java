@@ -45,6 +45,8 @@ public class AppConstant {
         String PARAM_OUT_SERVERMENU = "serverMenu";
         String PARAM_OUT_MINEMENU = "mineMenu";
         String PARAM_OUT_PACKAGEMENU = "packageMenu";
+        String PARAM_OUT_CUSTCERTINFO = "custCertInfo";
+        String PARAM_OUT_LIVENESSINFO = "livenessInfo";
 
     }
 

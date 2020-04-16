@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dxt.common.AppConstant;
 import com.dxt.dao.TxyLivenessRecognitionLogDao;
 import com.dxt.message.ReponseMessage;
+import com.dxt.model.LivenessInfo;
 import com.dxt.service.CacheManager;
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.profile.ClientProfile;
@@ -25,10 +26,13 @@ public class LivenessRecognition
     CacheManager cacheManager;
     @Autowired
     TxyLivenessRecognitionLogDao txyLivenessRecognitionLogDao;
+    @Autowired
+    LivenessInfo livenessInfo;
     public ReponseMessage checkLive(String name, String idCard,String videoBase64,String plat){
         ReponseMessage reponseMessage = new ReponseMessage();
         String result = "";
         Map<String,String> map = new HashMap<>();
+        JSONObject retObject = new JSONObject();
         try{
             Credential cred = new Credential(cacheManager.getSysConfigByCode(AppConstant.SYS_CONFIG_KEY.KEY_TX_CHECK_SECRETID),
                     cacheManager.getSysConfigByCode(AppConstant.SYS_CONFIG_KEY.KEY_TX_CHECK_SECRETKEY));
@@ -37,7 +41,13 @@ public class LivenessRecognition
             ClientProfile clientProfile = new ClientProfile();
             clientProfile.setHttpProfile(httpProfile);
             FaceidClient client = new FaceidClient(cred, "ap-beijing", clientProfile);
-            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+",\"VideoBase64\":"+videoBase64+",\"LivenessType\":\"SILENT\"}";
+            JSONObject paramsJson = new JSONObject();
+            paramsJson.put("IdCard",idCard);
+            paramsJson.put("Name",name);
+            paramsJson.put("VideoBase64",videoBase64);
+            paramsJson.put("LivenessType","SILENT");
+            String params = paramsJson.toJSONString();
+//            String params = "{\"IdCard\":"+idCard+",\"Name\":"+name+",\"VideoBase64\":"+videoBase64+",\"LivenessType\":\"SILENT\"}";
             LivenessRecognitionRequest req = LivenessRecognitionRequest.fromJsonString(params, LivenessRecognitionRequest.class);
             LivenessRecognitionResponse resp = client.LivenessRecognition(req);
             result = LivenessRecognitionRequest.toJsonString(resp);
@@ -60,20 +70,26 @@ public class LivenessRecognition
                 map.put("resCode",code);
                 map.put("resMsg",message);
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
-                        message);
+                        message,map);
             }else{
                 String resultCode = jsonObject.getString("Result");
                 String description = jsonObject.getString("Description");
                 map.put("resCode",resultCode);
                 map.put("resMsg",description);
-//                String bestFrameBase64 = jsonObject.getString("BestFrameBase64");
+                String bestFrameBase64 = jsonObject.getString("BestFrameBase64");
                 String sim = jsonObject.getString("Sim");
+                livenessInfo.setBestFrameBase64(bestFrameBase64);
+                livenessInfo.setSim(sim);
+                livenessInfo.setResCode(resultCode);
+                livenessInfo.setResMsg(description);
+                livenessInfo.setId(requestId);
+                retObject.put(AppConstant.REQUEST_REPONSE_PARAM.PARAM_OUT_LIVENESSINFO,livenessInfo);
                 if("Success".equals(resultCode)){
                     reponseMessage.setMsg(AppConstant.REPONSE_CODE.OK,
-                            description,jsonObject);
+                            description,retObject);
                 }else{
                     reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
-                            description);
+                            description,map);
                 }
             }
             txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);

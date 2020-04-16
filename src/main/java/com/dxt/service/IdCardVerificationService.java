@@ -41,12 +41,12 @@ public class IdCardVerificationService extends IBaseBusiService {
             return message;
         }
         //先从本地证件库检验
-        custCertInfo = custCertInfoDao.getCustInfoByIdCodeAndName(jsonObject.getString(AppConstant.REQUEST_REPONSE_PARAM.PARAM_IN_NAME),
-                jsonObject.getString(AppConstant.REQUEST_REPONSE_PARAM.PARAM_IN_CERTCODE));
+        custCertInfo = custCertInfoDao.getCustInfoByIdCodeAndName(jsonObject.getString(AppConstant.REQUEST_REPONSE_PARAM.PARAM_IN_CERTCODE),
+                jsonObject.getString(AppConstant.REQUEST_REPONSE_PARAM.PARAM_IN_NAME));
         if(custCertInfo!= null){
             retObject.put("resultCode","0");
             retObject.put("resultMsg","本地证件库校验成功");
-            message.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG);
+            message.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,retObject);
             return message;
         }else{
             custCertInfo = custCertInfoDao.getCustInfoByIdCode(jsonObject.getString(AppConstant.REQUEST_REPONSE_PARAM.PARAM_IN_CERTCODE));
@@ -65,7 +65,7 @@ public class IdCardVerificationService extends IBaseBusiService {
                     //不走校验
                     retObject.put("resultCode","0");
                     retObject.put("resultMsg","配置原因，未走检验程序");
-                    message.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG);
+                    message.setMsg(AppConstant.REPONSE_CODE.OK,AppConstant.REPONSE_MSG.SYS_REQUEST_OK_MSG,retObject);
                     return message;
                 }
 
