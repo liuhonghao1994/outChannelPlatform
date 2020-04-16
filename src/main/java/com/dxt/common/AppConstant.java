@@ -15,6 +15,12 @@ public class AppConstant {
         String PARAM_IN_PUSHID = "pushId";
         String PARAM_IN_KEEPLOGIN = "keepLogin";
         String PARAM_IN_OPERTYPE="operType";
+        String PARAM_IN_NAME = "name";
+        String PARAM_IN_CERTCODE = "certCode";
+        String PARAM_IN_IMAGEBASE64 = "imageBase64";
+        String PARAM_IN_VIDEOBASE64 = "videoBase64";
+        String PARAM_IN_CARDSIDE = "cardSide";
+        String PAEAM_IN_PLAT = "plat";
 
         String PARAM_OUT_USERINFO = "userBasicInfo";
         String PARAM_OUT_USERAVATARURL = "userAvatarUrl";
@@ -81,6 +87,16 @@ public class AppConstant {
         String KEY_PUSH_APPKEY = "PUSH_APPKEY";
         String KEY_PUSH_MASTERSECRET = "PUSH_MASTERSECRET";
 
+        /**
+         * 腾讯云系统参数配置
+         */
+        String KEY_TX_CHECK_SECRETID = "TX_CHECK_SECRETID";
+        String KEY_TX_CHECK_SECRETKEY= "TX_CHECK_SECRETKEY";
+
+        /**
+         * 人脸核身调用的平台配置
+         */
+        String KEY_IDCARD_CHECK_PLAT_INFO = "IDCARD_CHECK_PLAT_INFO";
     }
 
     /**
@@ -241,5 +257,12 @@ public class AppConstant {
         String PWD_VERIFY_TYPE_VERIFICATIONCODE = "2";
     }
 
-    
+    public interface IDCARD_CHECK_PLAT_INFO {
+        String VALUE_TXY = "TXY";
+        String VALUE_GXB = "GXB";
+    }
+
+
+
+
 }

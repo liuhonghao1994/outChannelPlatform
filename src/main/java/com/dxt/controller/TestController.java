@@ -10,6 +10,7 @@ import com.dxt.gexin.service.PushToSingleService;
 import com.dxt.jpush.JPushParam;
 import com.dxt.jpush.JPushService;
 import com.dxt.message.ReponseMessage;
+import com.dxt.tengxun.IdCardVerification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,8 @@ public class TestController {
     private PushToSingleService pushToSingleService;
     @Autowired
     private PushToListService pushToListService;
+    @Autowired
+    private IdCardVerification idCardVerification;
 
 
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
@@ -78,6 +81,14 @@ public class TestController {
         logger.debug(LogHelper._FUNC_START_());
         logger.debug(IDHelper.getTimestampId(BossConstant.ID_CONSTANTS.TYPE_LONG));
         ReponseMessage message = new ReponseMessage();
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/test/checkIdCard/{name}/{idCard}")
+    @ResponseBody
+    public ResponseEntity<ReponseMessage> checkIdCard(@PathVariable String name,@PathVariable String idCard) {
+        logger.debug(LogHelper._FUNC_START_());
+        ReponseMessage message = idCardVerification.checkIdCard(name,idCard);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
