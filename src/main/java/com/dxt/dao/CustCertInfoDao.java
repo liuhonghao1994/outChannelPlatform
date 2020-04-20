@@ -34,7 +34,7 @@ public interface CustCertInfoDao {
             "select #{id}," +
             "#{name},#{idCode},substr(#{idCode},7,8)," +
             "decode(mod(substr(#{idCode},17,1),2),0,'女',1,'男'," +
-            "mod(substr(#{idCode},17,1),2)) from dual a where " +
+            "mod(substr(#{idCode},17,1),2)) from dual a where  not exists " +
             "(select 1 from dxtcharge.oip_idinfo a where a.idcode = #{idCode} and a.name = #{name})")
     void insertCustCertInfo(CustCertInfo info);
 

@@ -77,7 +77,7 @@ public class OpenInterfaceController implements ApplicationContextAware  {
             message.setMsg(AppConstant.REPONSE_CODE.BUSI_ERROR, "请求参数有误，请检查参数是否正确！");
             return new ResponseEntity<ReponseMessage>(message, HttpStatus.OK);
         }
-        repReq = repReq.replaceAll("\\\\", "");
+        /*repReq = repReq.replaceAll("\\\\", "");*/
         logger.info(LogHelper._FUNC_() + "repReq:" + URLDecoder.decode(repReq,"UTF-8"));
 
         // 校验参数
