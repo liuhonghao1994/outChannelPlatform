@@ -60,7 +60,6 @@ public class LivenessRecognition
             JSONObject jsonObject = JSON.parseObject(result);
             JSONObject jsonErrorObject = jsonObject.getJSONObject("Error");
             String requestId = jsonObject.getString("RequestId");
-            map.put("responseStr",result);
             map.put("plat",plat);
             map.put("txyOrderId",requestId);
             if(jsonErrorObject != null){
@@ -69,6 +68,7 @@ public class LivenessRecognition
                 //添加人脸核身校验日志
                 map.put("resCode",code);
                 map.put("resMsg",message);
+                map.put("responseStr",result);
                 reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                         message,map);
             }else{
@@ -91,7 +91,9 @@ public class LivenessRecognition
                     reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                             description,map);
                 }
+                jsonObject.remove("BestFrameBase64");
             }
+            map.put("responseStr",jsonObject.toJSONString());
             txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
         }else{
             reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,

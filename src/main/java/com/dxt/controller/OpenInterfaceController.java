@@ -54,18 +54,17 @@ public class OpenInterfaceController implements ApplicationContextAware  {
      * @param response
      * @return
      */
-        @RequestMapping(value = "/openInterface")
+    @RequestMapping(value = "/openInterface")
     @ResponseBody
-    public ResponseEntity<ReponseMessage> openInterface(HttpServletRequest request, HttpServletResponse response) {
+    public ResponseEntity<ReponseMessage> openInterface(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         logger.debug(LogHelper._FUNC_START_());
         ReponseMessage message = new ReponseMessage();
         String resultInfos = getReqStrFromRequest(request);
-            String s = resultInfos.replaceAll(" ", "+");
-            String req = null;
+        String s = resultInfos.replaceAll(" ", "+");
+        String req = null;
         try {
             JSONObject jsonObject = JSON.parseObject(s);
             req = jsonObject.getString("req");
-            System.out.println(req+"lhhtest");
         } catch (Exception e) {
             logger.error(LogHelper._FUNC_EXCEPTION_() + LogHelper._LINE_() + e);
         }
@@ -73,16 +72,14 @@ public class OpenInterfaceController implements ApplicationContextAware  {
         // 获取参数
         try {
             repReq = new String (MyBase64.decryptBASE64(req), "UTF-8");
-                System.out.println(repReq);
         } catch (UnsupportedEncodingException e) {
             logger.error(LogHelper._FUNC_EXCEPTION_() + LogHelper._LINE_() + e);
             message.setMsg(AppConstant.REPONSE_CODE.BUSI_ERROR, "请求参数有误，请检查参数是否正确！");
             return new ResponseEntity<ReponseMessage>(message, HttpStatus.OK);
         }
-        logger.info(LogHelper._FUNC_() + "repReq:" + repReq);
-      /*  repReq = repReq.replaceAll("\\\\", "");*/
-        logger.info(LogHelper._FUNC_() + "repReq:" + repReq);
-        
+        repReq = repReq.replaceAll("\\\\", "");
+        logger.info(LogHelper._FUNC_() + "repReq:" + URLDecoder.decode(repReq,"UTF-8"));
+
         // 校验参数
         AppRequestMessage reqestMessage = null;
         BusiCodeBean busiCodeBean = null;
@@ -100,7 +97,7 @@ public class OpenInterfaceController implements ApplicationContextAware  {
             message.setMsg(AppConstant.REPONSE_CODE.SYS_ERROE, AppConstant.REPONSE_MSG.SYS_ERROR_MSG);
             return new ResponseEntity<>(message, HttpStatus.OK);
         }
-        
+
         // 定位业务处理服务
         IBaseBusiService iBaseBusiService = null;
         try {
@@ -208,9 +205,6 @@ public class OpenInterfaceController implements ApplicationContextAware  {
         Long signTimestamp =  Long.parseLong(msg.getTimestamp()) + Long.parseLong(msg.getClientCode());
         String signStr = msg.getAppType() + msg.getBusiCode() + msg.getReqInfo() + msg.getUuId() + signTimestamp+msg.getSecretKey();
         String sign = MyMD5.encryption(signStr);
-        String reqInfo = msg.getReqInfo();
-
-        System.out.println(reqInfo);
         logger.debug(LogHelper._FUNC_() + "sign from app:" + msg.getSign());
         logger.debug(LogHelper._FUNC_() + "sign from server:" + sign);
         if (!sign.equals(msg.getSign())) {
@@ -223,5 +217,5 @@ public class OpenInterfaceController implements ApplicationContextAware  {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
-    
+
 }
