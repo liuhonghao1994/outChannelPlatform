@@ -6,7 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="" />
+    <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/dao/CustCertInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/dao/CustCertInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$APP_TYPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$APP_TYPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$REQUEST_REPONSE_PARAM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$REQUEST_REPONSE_PARAM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$REQUEST_SOURCE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$REQUEST_SOURCE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$SYS_CONSTANT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/common/AppConstant$SYS_CONSTANT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/dao/TxyOcrAnalyseCardLogDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/dao/TxyOcrAnalyseCardLogDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/service/IdCardVerificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/service/IdCardVerificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/IDCardOCR.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/IDCardOCR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/IdCardVerification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/IdCardVerification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/LivenessRecognition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/LivenessRecognition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JustTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JustTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -650,7 +667,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578898105777" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/dxt/dao" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -673,9 +690,11 @@
       <recent name="com.dxt.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/dao" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/tengxun" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/controller" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="F:\zhangtingservice\src\test\java" />
-      <recent name="F:\zhangtingservice\src\main\java\com\dxt\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -690,7 +709,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JustTest">
+  <component name="RunManager" selected="Spring Boot.EchannelServerApplication">
     <configuration name="JustTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JustTest" />
       <module name="echannel" />
@@ -1061,7 +1080,11 @@
       <workItem from="1586505069385" duration="379000" />
       <workItem from="1586743458403" duration="5175000" />
       <workItem from="1586831750590" duration="17272000" />
-      <workItem from="1586913471161" duration="2969000" />
+      <workItem from="1586913471161" duration="4904000" />
+      <workItem from="1587087753014" duration="5500000" />
+      <workItem from="1587097299114" duration="2108000" />
+      <workItem from="1587386977533" duration="496000" />
+      <workItem from="1587390410117" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="合并代码">
       <created>1587004029047</created>
@@ -1070,7 +1093,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587004029047</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="合并代码">
+      <created>1587004041401</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587004041401</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1411,16 +1441,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/dxt/service/VerificationIdCardService.java</url>
           <line>33</line>
           <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dxt/service/rechargeResultCallbackService.java</url>
