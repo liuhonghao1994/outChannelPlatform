@@ -7,32 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00048.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00049.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00050.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00051.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00052.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00053.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00054.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00055.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00056.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00057.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00058.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00059.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00060.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00061.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00062.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00063.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00064.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00065.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00066.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00067.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00068.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200409A00069.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00008.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00012.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00016.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00018.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00021.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00035.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00038.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/dxt/MyXMLReader2DOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dxt/MyXMLReader2DOM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/dao/CustCertInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/dao/CustCertInfoDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/dxt/MyXMLReader2DOM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dxt/MyXMLReader2DOM.class" afterDir="false" />
     </list>
@@ -689,17 +673,9 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target\test-classes" />
-      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.dxt" />
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.dxt.controller" />
-      <recent name="com.dxt.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -707,6 +683,14 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/dxt/tengxun" />
       <recent name="$PROJECT_DIR$/src/main/java/com/dxt/controller" />
       <recent name="F:\zhangtingservice\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dxt.controller" />
+      <recent name="com.dxt.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target\test-classes" />
+      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1098,6 +1082,7 @@
       <workItem from="1587386977533" duration="496000" />
       <workItem from="1587390410117" duration="10300000" />
       <workItem from="1587540701847" duration="418000" />
+      <workItem from="1587608574703" duration="3539000" />
     </task>
     <task id="LOCAL-00001" summary="合并代码">
       <created>1587004029047</created>
@@ -1120,17 +1105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1587435360548</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改腾讯云识别，增加解析文件">
+      <created>1587608635122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587608635122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TodoView" selected-index="3">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1138,7 +1121,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="合并代码" />
     <MESSAGE value="更改相关接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改相关接口" />
+    <MESSAGE value="修改腾讯云识别，增加解析文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改腾讯云识别，增加解析文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
