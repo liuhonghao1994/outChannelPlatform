@@ -17,7 +17,7 @@ public interface CustCertInfoDao {
             @Result(property = "gender", column = "gender")
     })
     CustCertInfo getCustInfoByIdCodeAndName(@Param("idCode") String idCode,
-                                                   @Param("name") String name);
+                                            @Param("name") String name);
 
     @Select("select t.id,t.name,t.idcode,t.birthday,t.gender from dxtcharge.oip_idinfo t" +
             " where  t.idcode = #{idCode,jdbcType=VARCHAR}")
