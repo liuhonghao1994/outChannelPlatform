@@ -7,17 +7,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d94d675c-be80-4e90-b565-1d1df4befb7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00008.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00012.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00016.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00018.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00021.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00035.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00038.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00002.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00003.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00007.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00010.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00014.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00015.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00019.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00020.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00022.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00023.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00024.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00025.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00027.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00028.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00029.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00030.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00031.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00033.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00034.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00036.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00037.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/10000002162000280001BUS6101920200309A00039.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dxt/common/FFmpegVideo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/controller/OpenInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/service/LivenessRecognitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/service/LivenessRecognitionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dxt/tengxun/LivenessRecognition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JustTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JustTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/dxt/MyXMLReader2DOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dxt/MyXMLReader2DOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/controller/OpenInterfaceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/service/LivenessRecognitionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/service/LivenessRecognitionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/LivenessRecognition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dxt/tengxun/LivenessRecognition.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JustTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JustTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/dxt/MyXMLReader2DOM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dxt/MyXMLReader2DOM.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,24 +77,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>request</find>
-      <find>Cookie</find>
-      <find>iot</find>
-      <find>source</find>
-      <find>11.89</find>
-      <find>uip</find>
-      <find>UIP_SOCKET_IP</find>
-      <find>IdAuthRequestBody</find>
-      <find>LACKDIGITS</find>
-      <find>str</find>
-      <find>PARAM_PLATFORM</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>false</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -663,34 +672,34 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578898105777" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/dxt/tengxun" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target\test-classes" />
+      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.dxt" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/dao" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/tengxun" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/controller" />
-      <recent name="F:\zhangtingservice\src\test\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.dxt.controller" />
       <recent name="com.dxt.util" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target\test-classes" />
-      <recent name="F:\zhangtingservice\duiwaijiekounenglipingtai\target" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/tengxun" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/common" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/dao" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/dxt/controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -705,7 +714,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyXMLReader2DOM.text">
+  <component name="RunManager" selected="Spring Boot.EchannelServerApplication">
     <configuration name="JustTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JustTest" />
       <module name="echannel" />
@@ -1082,7 +1091,16 @@
       <workItem from="1587386977533" duration="496000" />
       <workItem from="1587390410117" duration="10300000" />
       <workItem from="1587540701847" duration="418000" />
-      <workItem from="1587608574703" duration="3539000" />
+      <workItem from="1587608574703" duration="7006000" />
+      <workItem from="1587975873711" duration="220000" />
+      <workItem from="1587991600095" duration="660000" />
+      <workItem from="1588043747328" duration="511000" />
+      <workItem from="1588746810843" duration="155000" />
+      <workItem from="1588838018466" duration="697000" />
+      <workItem from="1588839145693" duration="3405000" />
+      <workItem from="1588901935004" duration="163000" />
+      <workItem from="1588904919872" duration="160000" />
+      <workItem from="1588919934785" duration="945000" />
     </task>
     <task id="LOCAL-00001" summary="合并代码">
       <created>1587004029047</created>
@@ -1112,7 +1130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587608635122</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="增加解析文件">
+      <created>1587692280919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587692280919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1122,7 +1147,8 @@
     <MESSAGE value="合并代码" />
     <MESSAGE value="更改相关接口" />
     <MESSAGE value="修改腾讯云识别，增加解析文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改腾讯云识别，增加解析文件" />
+    <MESSAGE value="增加解析文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加解析文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1585,9 +1611,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/dxt/dao/ScanMesParseDao.java</url>
           <line>11</line>
-          <properties class="com.dxt.dao.ScanMesParseDao" method="insetMesInfoIntoParseMes">
-            <option name="EMULATED" value="true" />
-          </properties>
+          <properties class="com.dxt.dao.ScanMesParseDao" method="insetMesInfoIntoParseMes" />
           <option name="timeStamp" value="258" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

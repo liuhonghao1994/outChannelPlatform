@@ -28,7 +28,7 @@ public class MyXMLReader2DOM {
     public void text() {
         System.out.println(scanMesParseDao);
           try {
-                File f = new File("src/10000002162000280001BUS6101920200309A00038.txt");
+                File f = new File("src/10000002162000280001BUS6101920200309A00039.txt");
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
                  Document doc = builder.parse(f);
@@ -47,7 +47,7 @@ public class MyXMLReader2DOM {
                     map.put("imsi_g",doc.getElementsByTagName("IMSI_G").item(0).getFirstChild().getNodeValue());
                     map.put("smsp",doc.getElementsByTagName("SMSP").item(i).getFirstChild().getNodeValue());
                     map.put("imsi_lte",doc.getElementsByTagName("IMSI_LTE").item(i).getFirstChild().getNodeValue());
-                    map.put("file_name","10000002162000280001BUS6101920200309A00038");
+                    map.put("file_name","10000002162000280001BUS6101920200309A00039");
 
                     scanMesParseDao.insetMesInfoIntoParseMes(map);
 //                    System.out.println("dxt00000"+i+"ICCID:"+ doc.getElementsByTagName("ICCID").item(i).getFirstChild().getNodeValue());

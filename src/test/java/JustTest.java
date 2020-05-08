@@ -4,10 +4,10 @@ import com.dxt.common.MyMD5;
 
 public class JustTest {
     public static void main(String[] args) {
-        JSONObject reqInfo = getReqInfo10601();
+        JSONObject reqInfo = getReqInfo20004();
         JSONObject object = new JSONObject();
         object.put("appType", "web");
-        object.put("busiCode", "10601");
+        object.put("busiCode", "10026");
         object.put("timestamp", System.currentTimeMillis());
         object.put("uuId", "999");
         object.put("version", "1");
@@ -33,19 +33,11 @@ public class JustTest {
 
     public static JSONObject getReqInfo20004(){
         JSONObject reqInfo = new JSONObject();
-        reqInfo.put("name","test1");
-        reqInfo.put("wxCode","lov23");
-        reqInfo.put("payPwd","123456");
-        reqInfo.put("certCode","410433195612034876");
-        reqInfo.put("linkPhone","17090819081");
-        reqInfo.put("address","北京市朝阳区");
-        reqInfo.put("addressDes","阜通东大街");
-        reqInfo.put("certAddress","测试地市");
-        reqInfo.put("idCardFront","123");
-        reqInfo.put("idCardReverse","123");
-        reqInfo.put("bareheadPhoto","123");
-        reqInfo.put("platForm","11");
-        reqInfo.put("certExpireDay","2099-12-31");
+        reqInfo.put("Idcardname","刘红豪");
+        reqInfo.put("Idcardnumber","610202199410252816");
+        reqInfo.put("Idcardaddress","陕西省铜川市王益区王家河镇南雷村149号");
+        reqInfo.put("Idcardvalidity","20220803");
+
 
         return reqInfo;
     }

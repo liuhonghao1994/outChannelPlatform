@@ -3,10 +3,13 @@ package com.dxt.tengxun;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dxt.common.AppConstant;
+import com.dxt.common.FFmpegVideo;
+import com.dxt.common.MyDateUtil;
 import com.dxt.dao.TxyLivenessRecognitionLogDao;
 import com.dxt.message.ReponseMessage;
 import com.dxt.model.LivenessInfo;
 import com.dxt.service.CacheManager;
+import com.dxt.util.ImgErToFileUtil;
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.profile.ClientProfile;
 import com.tencentcloudapi.common.profile.HttpProfile;
@@ -17,6 +20,8 @@ import com.tencentcloudapi.faceid.v20180301.models.LivenessRecognitionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 @Component
@@ -28,11 +33,55 @@ public class LivenessRecognition
     TxyLivenessRecognitionLogDao txyLivenessRecognitionLogDao;
     @Autowired
     LivenessInfo livenessInfo;
+    private String newImgPath = "/home/appserver/video/";
     public ReponseMessage checkLive(String name, String idCard,String videoBase64,String plat){
         ReponseMessage reponseMessage = new ReponseMessage();
         String result = "";
         Map<String,String> map = new HashMap<>();
         JSONObject retObject = new JSONObject();
+        Integer videoSize = FFmpegVideo.imageSize(videoBase64);
+        map.put("name",name);
+        map.put("idCard",idCard);
+        map.put("plat",plat);
+        map.put("txyOrderId",String.valueOf(System.currentTimeMillis()));
+        if(videoSize > 7*1024*1024){
+            map.put("resCode","1000");
+            map.put("resMsg","视频超过7M不可压缩识别");
+            txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
+            reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
+                    "视频超过7M不可压缩识别");
+            return reponseMessage;
+        }else{
+            try{
+                File filePath = new File(newImgPath);
+                if(!filePath.isDirectory()){
+                    filePath.mkdirs();
+                }
+                String dateStr = MyDateUtil.getDateStringFromDate(new Date(),MyDateUtil.FormatPattern.YYYYMMDDHHMMSS.getFormatPattern());
+                String imgSource = newImgPath+idCard+"_"+dateStr+".mp4";
+                String videoTarget = newImgPath+idCard+"_"+dateStr+"_z.mp4";
+                boolean videoFileBool = ImgErToFileUtil.generateImage(videoBase64,imgSource);
+                if(videoFileBool){
+                    FFmpegVideo.toCompressFile_java(imgSource,videoTarget);
+                    videoBase64 = ImgErToFileUtil.getImageStr(videoTarget);
+                }else{
+                    map.put("resCode","2000");
+                    map.put("resMsg","视频base64串转File失败");
+                    txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
+                    reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
+                            "视频base64串转File失败。");
+                    return reponseMessage;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                map.put("resCode","3000");
+                map.put("resMsg","视频base64串转File异常");
+                txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
+                reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
+                        idCard+",视频base64串转File失败。"+e.getMessage());
+                return reponseMessage;
+            }
+        }
         try{
             Credential cred = new Credential(cacheManager.getSysConfigByCode(AppConstant.SYS_CONFIG_KEY.KEY_TX_CHECK_SECRETID),
                     cacheManager.getSysConfigByCode(AppConstant.SYS_CONFIG_KEY.KEY_TX_CHECK_SECRETKEY));

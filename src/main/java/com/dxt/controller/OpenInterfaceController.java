@@ -78,7 +78,7 @@ public class OpenInterfaceController implements ApplicationContextAware  {
             return new ResponseEntity<ReponseMessage>(message, HttpStatus.OK);
         }
        // repReq = repReq.replaceAll("\\\\", "");
-        logger.info(LogHelper._FUNC_() + "repReq:" + URLDecoder.decode(repReq,"UTF-8"));
+        //logger.info(LogHelper._FUNC_() + "repReq:" + URLDecoder.decode(repReq,"UTF-8"));
 
         // 校验参数
         AppRequestMessage reqestMessage = null;
