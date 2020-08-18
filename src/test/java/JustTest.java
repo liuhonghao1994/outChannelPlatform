@@ -19,14 +19,14 @@ public class JustTest {
         Long signTimeStamp = Long.parseLong(object.getString("timestamp")) + Long.parseLong(object.getString("clientCode"));
         String signStr = object.getString("appType") + object.getString("busiCode") + reqInfo.toString() +
                 object.getString("uuId") + signTimeStamp.toString()+object.getString("secretKey");
-        System.out.println(signStr);
-        System.out.println(MyMD5.encryption(signStr));
+
         object.put("sign", MyMD5.encryption(signStr));
+        System.out.println(object);
         String data = MyBase64.encryptBASE64(object.toString().getBytes());
         System.out.println("{\"req\":\""+data.replaceAll("\r|\n", "") + "\"}");
-        System.out.println();
-        byte[] byteArray = MyBase64.decryptBASE64(data);
+        byte[] byteArray = MyBase64.decryptBASE64(data.replaceAll("\r|\n", ""));
         System.out.println(new String(byteArray));
+
 
     }
 
@@ -60,9 +60,9 @@ public class JustTest {
     public static JSONObject getReqInfo10603(){
         JSONObject reqInfo = new JSONObject();
         reqInfo.put("name","李艳超");
-        reqInfo.put("certCode","lov23");
-        reqInfo.put("videoBase64","123456");
-        reqInfo.put("plat","zz");
+        reqInfo.put("certCode","410522198806124713");
+        reqInfo.put("videoBase64","123123");
+        reqInfo.put("plat","WXGZH");
         return reqInfo;
     }
 
