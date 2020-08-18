@@ -47,11 +47,12 @@ public class LivenessRecognition
         if(videoSize > 7*1024*1024){
             map.put("resCode","1000");
             map.put("resMsg","视频超过7M不可压缩识别");
+            map.put("responseStr","未调用腾讯云，自己判断大小进行第一波限制");
             txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
             reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                     "视频超过7M不可压缩识别");
             return reponseMessage;
-        }else{
+        }else if(videoSize >= 3*1024*1024 && videoSize <= 7*1024*1024){
             try{
                 File filePath = new File(newImgPath);
                 if(!filePath.isDirectory()){
@@ -67,6 +68,7 @@ public class LivenessRecognition
                 }else{
                     map.put("resCode","2000");
                     map.put("resMsg","视频base64串转File失败");
+                    map.put("responseStr","未调用腾讯云，视频base64串转File失败");
                     txyLivenessRecognitionLogDao.insertTxyLivenessRecognitionLog(map);
                     reponseMessage.setMsg(AppConstant.REPONSE_CODE.BUSI_WARNING,
                             "视频base64串转File失败。");

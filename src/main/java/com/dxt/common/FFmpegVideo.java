@@ -20,7 +20,7 @@ public class FFmpegVideo {
             System.out.println("begin");
             VideoAttributes video=new VideoAttributes();
             video.setCodec("mpeg4");
-            video.setBitRate(new Integer(256000));
+            video.setBitRate(new Integer(512000));
             video.setFrameRate(new Integer(15));
             EncodingAttributes attr=new EncodingAttributes();
             attr.setFormat("mp4");
